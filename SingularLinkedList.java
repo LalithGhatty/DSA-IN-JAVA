@@ -34,13 +34,19 @@ public class SingularLinkedList {
         }
         public void traverse(){
             Node temp = head;
+            if(head == null){
+                System.out.println("Linked List does not exist");
+            }
+            else{
             while(temp != null){
-                System.out.println(temp.data);
+                System.out.print(temp.data + " ");
                 temp = temp.next;
             }
-        }
+        } }
 
     public static void main(String[] args) {
-        
+            SingularLinkedList obj = new SingularLinkedList();
+            obj.create();
+            obj.traverse();
     }
     }
