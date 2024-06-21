@@ -98,7 +98,7 @@ public class LinkedList {
                         System.out.println("Node is deleted from the " + " " + p + "th" + " " + "position");
                         break;
                 }}
-                System.out.println("Enter 1 for insertion of more data");
+                System.out.println("Enter 1 for deletion of more data");
                 n = sc.nextInt();
         }
         while(n == 1);
