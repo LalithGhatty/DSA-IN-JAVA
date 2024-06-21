@@ -58,6 +58,51 @@ public class LinkedList {
         }
         while(n == 1);
     }
+    public void delete() {
+        int data, n, m, p;
+        Scanner sc = new Scanner(System.in);
+        do {
+            if (head == null) {
+                System.out.println("Linked List is empty");
+            } else {
+                System.out.println("Enter 1 to delete node from beginning, 2 to delete from the end , 3 to delete from specific position");
+                m = sc.nextInt();
+                switch (m) {
+                    case 1:
+                        Node temp = head;
+                        temp = temp.next;
+                        head = temp;
+                        System.out.println("Node is deleted from the beginning of the linked list");
+                        break;
+                    case 2:
+                        Node temp1 = head;
+                        Node ptr = temp1.next;
+                        while (ptr.next != null) {
+                            temp1 = ptr;
+                            ptr = ptr.next;
+                        }
+                        temp1.next = null;
+                        System.out.println("Node is deleted from the end of the linked list");
+                        System.out.println("The value of the last node is:" + " " + temp1.data);
+                        break;
+                    case 3:
+                        System.out.println("Enter the position from where you want to delete the node");
+                        p = sc.nextInt();
+                        Node temp2 = head;
+                        Node ptr1 = temp2.next;
+                        for (int i = 0; i < p - 2; i++) {
+                            temp2 = ptr1;
+                            ptr1 = ptr1.next;
+                        }
+                        temp2.next = ptr1.next;
+                        System.out.println("Node is deleted from the " + " " + p + "th" + " " + "position");
+                        break;
+                }}
+                System.out.println("Enter 1 for insertion of more data");
+                n = sc.nextInt();
+        }
+        while(n == 1);
+    }
 
     public void traverse() {
         Node temp = head;
@@ -74,7 +119,9 @@ public class LinkedList {
     public static void main(String[] args) {
         LinkedList obj = new LinkedList();
         obj.create();
+        obj.delete();
         obj.traverse();
+
 
     }
 }
