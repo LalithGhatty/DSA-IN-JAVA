@@ -60,6 +60,46 @@ public class DoublyLinkedList {
             n = sc.nextInt();
         }
         while(n == 1);}
+        public void delete(){
+            int m,n,p;
+            Scanner sc = new Scanner(System.in);
+            do{
+            if(head == null){
+                System.out.println("Linked List does not exist");
+            }
+            else {
+                System.out.println("Enter 1 to delete node from beginning,2 to delete node from the end,3 to delete node from required position");
+                m = sc.nextInt();
+                switch (m) {
+                    case 1:
+                        Node temp = head;
+                        temp = temp.next;
+                        head = temp;
+                        System.out.println("Node is deleted from the beginning of the Linked List");
+                        break;
+                    case 2:
+                        Node temp1 = tail;
+                        temp1 = temp1.prev;
+                        temp1.next = null;
+                        System.out.println("Node is deleted from the end of the Linked List");
+                        break;
+                    case 3:
+                        System.out.println("Enter the required position");
+                        p = sc.nextInt();
+                        Node temp2 = head;
+                        Node ptr1 = temp2.next;
+                        for (int i = 1; i < p - 1; i++) {
+                            temp2 = temp2.next;
+                        }
+                        temp2.next = ptr1.next;
+                        ptr1.next.prev = temp2;
+                        break;
+                }
+    
+            }System.out.println("Enter 1 to delete more nodes from the LinkedList");
+            n = sc.nextInt();
+                } while(n == 1);
+            }
     public void traverse(){
         Node temp = head;
         if(head == null){
@@ -78,6 +118,7 @@ public class DoublyLinkedList {
     public static void main(String[] args) {
         DoublyLinkedList obj = new DoublyLinkedList();
         obj.create();
+        obj.delete();
         obj.traverse();
 
     }
