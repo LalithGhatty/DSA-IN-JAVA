@@ -5,9 +5,11 @@ public class LinearSearch1 {
         System.out.println("Enter the length of the array");
         Scanner sc = new Scanner(System.in);
         int len = sc.nextInt();
+        System.out.println("Enter how many numbers you want to generate randomly");
+        int randomInt = sc.nextInt();
         int[] arr = new int[len];
         for(int i = 0;i<len;i++){
-            arr[i] = random.nextInt(10000);
+            arr[i] = random.nextInt(randomInt);
         };
         System.out.println("Enter the number you want to search in the array");
         int required = sc.nextInt();
